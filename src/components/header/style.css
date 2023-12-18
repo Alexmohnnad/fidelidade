@@ -1,0 +1,18 @@
+header {
+    width: 100%;
+    padding: auto;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    background-color: #F9F3E7;
+  }  
+  
+  header img {
+    width: 100%;
+    height: 220px;
+  }
+  @media screen and (max-width: 662px){
+    header{
+      flex-direction: column;
+    }
+  }

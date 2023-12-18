@@ -1,0 +1,63 @@
+.centro{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align:center;  
+    /* pura mágica */
+    position: absolute;
+    top: 45%; /* posiciona na metade da tela */
+    margin-top: -25px; /* e retrocede metade da altura */
+    left: 5px;
+}
+@media screen and (max-width: 800px){
+    .centro{
+    flex-direction: column;
+    /* pura mágica */
+    position: fixed;
+    top: 35%; /* posiciona na metade da tela */
+    margin-top: -25px; /* e retrocede metade da altura */
+    left: 1px;
+    }
+      
+    .nome {
+        width: 200px;
+        position: relative; 
+        text-align:center; 
+        font-size:15px; 
+        text-transform:uppercase;       
+      }
+      .dividido{
+        width: 150px;
+        margin: 10px;
+        position: relative; 
+        text-align:center; 
+        font-size:15px; 
+        text-transform:uppercase;       
+      }
+    .btndiv {
+        margin-top: 1px;
+        margin: 2px;
+        position: absolute;
+    }
+
+    .btn-gravar  {
+        margin: 15px;
+        padding: 15px;
+        font-size: large;
+        border:none;
+        border-radius: 15px;
+        background-color:#25B14C;
+        color: #000000;
+        text-decoration:none;
+        }  
+        .btn-voltar  {
+            margin: 15px;
+            padding: 15px;
+            border: black;
+            font-size: large;
+            border-radius: 15px;
+            background-color:#FFD157;
+            color: #000000;
+            text-decoration:none;
+            } 
+}
