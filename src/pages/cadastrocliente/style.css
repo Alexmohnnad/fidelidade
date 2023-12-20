@@ -13,43 +13,45 @@
     .centro{
     flex-direction: column;
     /* pura mágica */
-    position: fixed;
-    top: 35%; /* posiciona na metade da tela */
-    margin-top: -25px; /* e retrocede metade da altura */
-    left: 1px;
-    }
-      
-    .nome {
-        width: 200px;
-        position: relative; 
-        text-align:center; 
-        font-size:15px; 
-        text-transform:uppercase;       
-      }
-      .dividido{
-        width: 150px;
-        margin: 10px;
-        position: relative; 
-        text-align:center; 
-        font-size:15px; 
-        text-transform:uppercase;       
-      }
-    .btndiv {
-        margin-top: 1px;
-        margin: 2px;
-        position: absolute;
+    position: absolute;
+    top: 40%; /* posiciona na metade da tela */
+    /*margin-top: -35px; /* e retrocede metade da altura */
+    margin: 0;
+    
+ 
+    
     }
 
-    .btn-gravar  {
-        margin: 15px;
-        padding: 15px;
-        font-size: large;
-        border:none;
-        border-radius: 15px;
-        background-color:#25B14C;
-        color: #000000;
-        text-decoration:none;
-        }  
+    .box-formulario {
+      width: 100%;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #bad5be;
+      padding:60px 0;
+  }
+  .formulario {  
+      width: 90%;
+      margin: auto;
+      padding: 10px 20px;
+      border: 3px solid black;
+      border-radius: 5px;
+      text-align: center;
+  }
+      
+ 
+      .dividido{
+        width: 100%;
+        padding: 7px 0;
+        margin: 10px auto;
+        position: relative; 
+        text-align:center; 
+        font-size:15px; 
+        text-transform:uppercase;       
+      }
+
+
         .btn-voltar  {
             margin: 15px;
             padding: 15px;
