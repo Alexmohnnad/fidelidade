@@ -21,7 +21,7 @@ export default function FormDialog(props) {
   });
 
   const handleEditCliente = () =>{
-    axios.put("http://localhost:3001/editar",{
+    axios.put("http://192.168.1.10:3001/editar",{
       id: editvalues.id,
       nome: editvalues.nome,
       //cpf: editvalues.cpf,
@@ -34,9 +34,19 @@ export default function FormDialog(props) {
   };
 
   const handleDeleteCliente = () =>{
-    axios.delete(`http://localhost:3001/delete/${editvalues.id}`);
+    axios.delete(`http://192.168.1.10:3001/delete/${editvalues.id}`);
     handleClose ();
   };
+
+  const handleEnvioMensagem = () =>{
+    let saud = "Olá";
+    let msg = "chegou novidades em,";
+    let msg1 = "na casa dos tecidos venha conferir!!!!" 
+    let url = `https://web.whatsapp.com/send?phone=${editvalues.telefone}&text=${saud} ${editvalues.nome} ${msg} (Digite o produto que o seu cliente comprou), ${msg1} `
+    window.open(url)
+    
+    handleClose ();
+  };//console.log(handleEnvioMensagem)
 
   // const handleClickOpen = () => {
   //   props.setOpen(true);
@@ -96,7 +106,7 @@ export default function FormDialog(props) {
           <Button onClick={handleDeleteCliente}>Excluir</Button>
           <Button onClick={handleClose}>Sair</Button>
           <Button onClick={handleEditCliente}>Salvar</Button>
-          <Button onClick={handleClose}>Enviar</Button>
+          <Button onClick={handleEnvioMensagem}>Enviar</Button>
         </DialogActions>
       </Dialog>
     

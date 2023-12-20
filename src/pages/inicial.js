@@ -15,7 +15,7 @@ export default function Inicial(){
                         <Link className="btn"to='/consultaclientes'>Consultar clientes</Link> 
                     </nav>    
                     <nav>                           
-                        <Link className="btn"to='/envionovidade'>Enviar novidades</Link> 
+                        
                         <Link className="btn"to='/aniversariantes'>Aniversariantes</Link>
                     </nav>
                     </div>                                    

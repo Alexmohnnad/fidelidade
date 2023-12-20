@@ -14,7 +14,7 @@ export default function Formulario() {
     }));
   };
   const handleClickButton = () =>{
-    axios.post("http://localhost:3001/cadastro",{
+    axios.post("http://192.168.1.10:3001/cadastro",{
       nome: values.nome,
       cpf: values.cpf,
       telefone: values.telefone,
