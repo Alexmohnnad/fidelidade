@@ -33,6 +33,13 @@
     text-transform:uppercase;       
   }
 
+.div-btn{
+    width: 50%;
+    margin: 0 25%;
+    padding: 10px 20px;
+    text-align: center;  
+}  
+
 .btn-gravar{
  
     margin: 15px;

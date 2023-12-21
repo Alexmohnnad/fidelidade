@@ -39,12 +39,10 @@ export default function Consulta() {
                 className="nome"
                 type="text"
                 onChange={(event) => handleBuscarCliente(event.target.value)}
-                placeholder="Consulta por telefone"
-                />                                    
-            <hr />
-            <div>
-                <Link className="btn-voltar"to='/'>Voltar</Link>             
-            </div> 
+                placeholder="Consulta cliente"
+                />     
+           < Link className="btn-voltar"to='/'>Voltar</Link>  
+
       </div>
             <div>
              {textoBusca && textoBusca.length > 0 

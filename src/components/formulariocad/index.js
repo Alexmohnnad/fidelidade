@@ -68,14 +68,10 @@ export default function Formulario() {
                 placeholder="Tipo de produto que seu cliente comprou"
                 onChange={handleChangeValues}
                 />  
-                   
-            <hr />
-            <div>
-                <Link className="btn-voltar"to='/'>Voltar</Link>
+                    <Link className="btn-voltar"to='/'>Voltar</Link>
                {/* <button className="btn-voltar" onClick={handleClickVoltar} >Voltar</button> */}
                 <button className="btn-gravar" onClick={() => handleClickButton ()} >Salvar</button>
-             
-            </div>    
+            <hr />   
       </div>
     </form> 
     );

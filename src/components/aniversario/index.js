@@ -1,45 +1,67 @@
-import React from "react";
+import React, {useState, useEffect}  from "react";
 import { Link } from "react-router-dom";
+import  Axios  from "axios";
+import Card from "../card/cardniver";
 
 
-export default function Aniversario() {
-    function handleGravar(e) {
-      // impede que o navegador recarregue a pagina
-     e.preventDefault();
+export default function Consulta() {
   
-      // Inicia o formulario
-      const form = e.target;
-      const formData = new FormData(form);
-  
-      // Você pode passar formData como um corpo de busca diretamente:
-      fetch('/cadcliente', { method: form.method, body: formData });
-  
-      // Ou você pode trabalhar com ele como um objeto simples:
-      const Form = Object.fromEntries(formData.entries());
-      console.log(Form);
-      if(Form > 0){
-        <h1>tem algo no banco</h1>
-      }else{
-        <h1> sem consulta no banco</h1>
-      }
-    }
-  
-    return (
-        
+  const [listcliente, setlistcliente] = useState();
+    //console.log(listcliente);
+     useEffect(() => {
+        Axios.get("http://192.168.1.10:3001/consultacliente", {
+        }).then((response) => {
+            
+            setlistcliente (response.data);
+        }); 
+    }, []);
+
+    const buscarCliente = (textoDigitado) => {
+      return listcliente.filter(
+        (cliente) =>
+          cliente.nome.toLowerCase().includes(textoDigitado.toLowerCase()) ||
+          cliente.datanascimento.toLowerCase().includes(textoDigitado.toLowerCase())
+          
+      );
+    };
+    const [textoBusca, setTextoBusca] = useState("");
+    const handleBuscarCliente = (textoDigitado) => {
+      setTextoBusca(textoDigitado);
+      setTextoBusca(buscarCliente(textoDigitado));
+     // console.log(textoBusca)  
+    };
+
+    return (     
     <div className=".box-formulario ">   
-      <form className="formulario" method="post" onSubmit={handleGravar}>
+      <div className="formulario">
             <hr /> 
-                <label >
-                <input className="nome"name="datanascimento" type="text"
-                                placeholder="Consulta dia e mes 01/01" />                                
-                </label>     
-            <hr />
-            <div className="btndiv">
-                <Link className="btn-voltar"to='/'>Voltar</Link>            
-                <button className="btn-gravar"type="submit">OK</button>
-            </div>    
-      </form>
+                <input 
+                className="nome"
+                type="text"
+                onChange={(event) => handleBuscarCliente(event.target.value)}
+                placeholder="Consulta data de aniversario ex: 01/01"
+                />     
+           < Link className="btn-voltar"to='/'>Voltar</Link>  
+
+      </div>
+            <div>
+             {textoBusca && textoBusca.length > 0 
+                ? (textoBusca.map((textoBusca) => (
+                    <Card 
+                    key={textoBusca.id}
+                    id={textoBusca.id}
+                    nome={textoBusca.nome}
+                    cpf={textoBusca.cpf}
+                    telefone={textoBusca.telefone}
+                    compra={textoBusca.compra} 
+                    listcard={textoBusca.ListCard}
+                    setListcard={textoBusca.setListcard}
+                    />
+                  )))
+               : ( <p >Não há nenhum cliente na lista.</p>)
+              }
+           
+           </div>
     </div> 
     );
   }
-  

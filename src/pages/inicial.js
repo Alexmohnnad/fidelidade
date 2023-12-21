@@ -13,11 +13,8 @@ export default function Inicial(){
                     <nav >                       
                         <Link className="btn"to='/cadcliente'>Cadastrar clientes</Link>
                         <Link className="btn"to='/consultaclientes'>Consultar clientes</Link> 
-                    </nav>    
-                    <nav>                           
-                        
                         <Link className="btn"to='/aniversariantes'>Aniversariantes</Link>
-                    </nav>
+                    </nav>    
                     </div>                                    
                 </main>
             <Footer />
