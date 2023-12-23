@@ -58,7 +58,7 @@ export default function Consulta() {
                     setListcard={textoBusca.setListcard}
                     />
                   )))
-               : ( <p >Não há nenhum cliente na lista.</p>)
+               : ( <p className="texto">Não há nenhum cliente na lista.</p>)
               }
            
            </div>
