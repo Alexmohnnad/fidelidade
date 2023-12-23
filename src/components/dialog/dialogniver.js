@@ -15,7 +15,7 @@ export default function FormDialog(props) {
     //cpf: props.cpf,
     telefone: props.telefone ,
     datanascimento: props.datanascimento,
-    compra: props.compra,
+    //compra: props.compra,
     
   });
 
@@ -27,12 +27,7 @@ export default function FormDialog(props) {
     window.open(url)
     
     handleClose ();
-  };//console.log(handleEnvioMensagem)
-
-  // const handleClickOpen = () => {
-  //   props.setOpen(true);
-  // };
-
+  };
   const handleClose = () => {
     props.setOpen(false);
   };

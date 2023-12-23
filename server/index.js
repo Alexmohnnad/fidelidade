@@ -20,7 +20,7 @@ app.post("/cadastro", (req, res)=>{
     if (err) {
       return res.status(500).send({Msg: 'Deu ruim na conexão', erro: err});
     } else {
-      return res.send(result); 
+      return res.send({Msg: 'Deu bom na conexão', erro: result}); 
     }
   });
 });

@@ -2,6 +2,7 @@ import React, {useState, useEffect}  from "react";
 import { Link } from "react-router-dom";
 import  Axios  from "axios";
 import Card from "../card/cardniver";
+import './style.css'
 
 
 export default function Consulta() {
@@ -58,7 +59,7 @@ export default function Consulta() {
                     setListcard={textoBusca.setListcard}
                     />
                   )))
-               : ( <p >Não há nenhum cliente na lista.</p>)
+               : ( <p className="texto">Não há nenhum cliente na lista.</p>)
               }
            
            </div>
