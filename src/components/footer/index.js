@@ -9,7 +9,7 @@ export default function Footer(){
                 <p>Thomas Roy Cromwell</p>
             </div>
             <div>
-                <p>© 2023 Alexandro. - Todos os direitos reservados.</p>
+                <p >© 2023 Alexandro. - Todos os direitos reservados.</p>
             </div>
         </footer>
     )
