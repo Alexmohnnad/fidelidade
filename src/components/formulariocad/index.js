@@ -4,18 +4,27 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 
-
 export default function Formulario() {
   const [values, setValues]  = useState();
-/*console.log(values);*/
+console.log(values);
   const handleChangeValues = value => {
     setValues((prevValue) => ({
       ...prevValue,
     [value.target.name]: value.target.value,
     }));
+ 
   };
   const handleClickButton = () =>{
-      axios.post("http://192.168.1.10:3001/cadastro",{
+    if(!values.nome){
+      return alert("Digite o nome")
+    }else if(!values.telefone){
+      return alert("Digite numero de telefone")
+    }else if(!values.datanascimento){
+      return alert("Digite data de nascimento")
+    }else if(!values.compra){
+      return alert("Digite compra realizada pelo cliente")
+    }else{
+      axios.post("http://localhost:3001/cadastro",{
         nome: values.nome,
         cpf: values.cpf,
         telefone: values.telefone,
@@ -23,18 +32,18 @@ export default function Formulario() {
         compra: values.compra,
       }).then((response)=>{
         alert("Cliente cadastrado com sucesso!!!!")
-        console.log(response)
+        /*console.log(response)*/
       });
-  };
+
+  }};
     return (  
-    <form className=".box-formulario ">   
+    <form className=".box-formulario">   
       <div className="formulario">
             <hr /> 
                 <input 
                 className="nome"
                 name="nome" 
                 type="text"
-                required="Digite o nome"
                 placeholder="Insira o nome do seu cliente" 
                 onChange={handleChangeValues}
               

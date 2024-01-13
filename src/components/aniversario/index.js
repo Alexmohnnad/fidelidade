@@ -10,7 +10,7 @@ export default function Consulta() {
   const [listcliente, setlistcliente] = useState();
     //console.log(listcliente);
      useEffect(() => {
-        Axios.get("http://192.168.1.10:3001/consultacliente", {
+        Axios.get("http://localhost:3001/consultacliente", {
         }).then((response) => {
             
             setlistcliente (response.data);

@@ -18,7 +18,7 @@ export default function FormDialog(props) {
   });
 
   const handleEditCliente = () =>{
-    axios.put("http://192.168.1.10:3001/editar",{
+    axios.put("http://localhost:3001/editar",{
       id: editvalues.id,
       nome: editvalues.nome,
       telefone: editvalues.telefone ,
@@ -32,7 +32,7 @@ export default function FormDialog(props) {
   };
 
   const handleDeleteCliente = () =>{
-    axios.delete(`http://192.168.1.10:3001/delete/${editvalues.id}`).then((response)=>{
+    axios.delete(`http://localhost:3001/delete/${editvalues.id}`).then((response)=>{
       alert("Cliente excluido com sucesso!!!!")
       console.log(response)
     });
