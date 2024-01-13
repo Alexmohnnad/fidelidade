@@ -16,9 +16,11 @@ console.log(values);
   };
   const handleClickButton = () =>{
     if(!values.nome){
-      return alert("Digite o nome")
-    }else if(!values.telefone){
-      return alert("Digite numero de telefone")
+       return alert("Digite o nome do cliente")
+    }else if(values.nome.length < 3){
+      return alert("Digite um nome valido com mais de 3 digitos")
+    }else if(!values.telefone || values.telefone.length < 11){
+      return alert("Digite numero de telefone válido")
     }else if(!values.datanascimento){
       return alert("Digite data de nascimento")
     }else if(!values.compra){
@@ -31,12 +33,13 @@ console.log(values);
         datanascimento: values.datanascimento,
         compra: values.compra,
       }).then((response)=>{
-        alert("Cliente cadastrado com sucesso!!!!")
+        return alert("Cliente cadastrado com sucesso!!!!")
         /*console.log(response)*/
       });
 
   }};
     return (  
+      
     <form className=".box-formulario">   
       <div className="formulario">
             <hr /> 
@@ -59,6 +62,7 @@ console.log(values);
                  className="dividido"
                  name="telefone"
                  type="number"
+                 minLength={11}
                  maxLength={11}
                  placeholder="Telefone"
                  onChange={handleChangeValues}
@@ -75,7 +79,6 @@ console.log(values);
                 className="nome"
                 name="compra" 
                 type="text"
-                minLength={1}
                 maxLength={200}
                 placeholder="Tipo de produto que seu cliente comprou"
                 onChange={handleChangeValues}
