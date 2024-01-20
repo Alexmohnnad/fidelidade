@@ -4,7 +4,9 @@ import './style.css';
 export default function Header (){
     return(
         <header>
-            <img src="assets/logo.png"title='logo empresa'alt="logo"/>
+                <div>
+                    <img src="assets/logo.png"title='logo empresa'alt="logo"/>
+                </div>
         </header>
     )
 }

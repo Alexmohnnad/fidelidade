@@ -25,7 +25,7 @@ export default function FormDialog(props) {
       compra: editvalues.compra
     }).then((response)=>{
       alert("Cliente editado com sucesso!!!!")
-      console.log(response)
+      //console.log(response)
     });
     handleClose ();
     window.location.reload();
@@ -34,7 +34,7 @@ export default function FormDialog(props) {
   const handleDeleteCliente = () =>{
     axios.delete(`http://localhost:3001/delete/${editvalues.id}`).then((response)=>{
       alert("Cliente excluido com sucesso!!!!")
-      console.log(response)
+      //console.log(response)
     });
     handleClose ();
     window.location.reload();
