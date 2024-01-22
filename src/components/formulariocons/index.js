@@ -7,7 +7,7 @@ import './style.css'
 export default function Consulta() {
   
   const [listcliente, setlistcliente] = useState();
-    //console.log(listcliente);
+    console.log(listcliente);
      useEffect(() => {
         Axios.get("http://localhost:3001/consultacliente", {
         }).then((response) => {
@@ -21,14 +21,15 @@ export default function Consulta() {
         (cliente) =>
           cliente.nome.toLowerCase().includes(textoDigitado.toLowerCase()) ||
           cliente.telefone.toLowerCase().includes(textoDigitado.toLowerCase()) ||
-          cliente.compra.toLowerCase().includes(textoDigitado.toLowerCase())
+          cliente.compra.toLowerCase().includes(textoDigitado.toLowerCase()) || 
+          cliente.data.toLowerCase().includes(textoDigitado.toLowerCase())
       );
     };
     const [textoBusca, setTextoBusca] = useState("");
     const handleBuscarCliente = (textoDigitado) => {
       setTextoBusca(textoDigitado);
       setTextoBusca(buscarCliente(textoDigitado));
-     // console.log(textoBusca)  
+     console.log(textoBusca)  
     };
 
     return (     
@@ -54,6 +55,7 @@ export default function Consulta() {
                     cpf={textoBusca.cpf}
                     telefone={textoBusca.telefone}
                     compra={textoBusca.compra} 
+                    data={textoBusca.data}
                     listcard={textoBusca.ListCard}
                     setListcard={textoBusca.setListcard}
                     />

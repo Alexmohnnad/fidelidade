@@ -6,7 +6,7 @@ import axios from "axios";
 export default function Formulario() {
   const [values, setValues]  = useState();
   
-//console.log(values);
+console.log(values);
   const handleChangeValues = value => {
     setValues((prevValue) => ({
       ...prevValue,
@@ -27,7 +27,7 @@ export default function Formulario() {
     }else{
       axios.post("http://localhost:3001/cadastro",{
         nome: values.nome,
-        cpf: values.cpf,
+        data: values.data,
         telefone: values.telefone,
         datanascimento: values.datanascimento,
         compra: values.compra,
@@ -53,9 +53,10 @@ export default function Formulario() {
 
                 <input 
                 className="dividido"
-                name="cpf" 
-                type="number"
-                placeholder="CPF"
+                name="data" 
+                //value = {new Date()}
+                type="date"
+                placeholder="Data da compra"
                 onChange={handleChangeValues}
                 />         
 

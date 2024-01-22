@@ -13,10 +13,11 @@ app.post("/cadastro", (req, res)=>{
   const {telefone} = req.body;
   const {datanascimento} = req.body;
   const {compra} = req.body;
+  const {data} = req.body;
 
-  let sql = "INSERT INTO cliente (nome, cpf, telefone, datanascimento, compra) VALUES (?,?,?,?,?)" ;
+  let sql = "INSERT INTO cliente (nome, cpf, telefone, datanascimento, compra, data) VALUES (?,?,?,?,?,?)" ;
 
-  db.query(sql, [nome, cpf, telefone, datanascimento, compra],(err,result)=>{
+  db.query(sql, [nome, cpf, telefone, datanascimento, compra, data],(err,result)=>{
     if (err) {
       return res.status(500).send({Msg: 'Deu ruim na conexão', erro: err});
     } else {
@@ -31,10 +32,11 @@ app.get("/consultacliente", (req, res)=>{
   const {telefone} = req.body;
   const {datanascimento} = req.body;
   const {compra} = req.body;
+  const {data} = req.body;
 
   let sql = "SELECT * FROM cliente";
 
-  db.query(sql, [nome, cpf, telefone, datanascimento, compra],(err,result)=>{
+  db.query(sql, [nome, cpf, telefone, datanascimento, compra, data],(err,result)=>{
     if (err) {
       return res.status(500).send({Msg: 'Deu ruim na conexão', erro: err});
     } else {
