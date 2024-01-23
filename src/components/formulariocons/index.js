@@ -7,7 +7,7 @@ import './style.css'
 export default function Consulta() {
   
   const [listcliente, setlistcliente] = useState();
-    console.log(listcliente);
+    //console.log(listcliente);
      useEffect(() => {
         Axios.get("http://localhost:3001/consultacliente", {
         }).then((response) => {
@@ -29,7 +29,7 @@ export default function Consulta() {
     const handleBuscarCliente = (textoDigitado) => {
       setTextoBusca(textoDigitado);
       setTextoBusca(buscarCliente(textoDigitado));
-     console.log(textoBusca)  
+     //console.log(textoBusca)  
     };
 
     return (     
@@ -42,6 +42,12 @@ export default function Consulta() {
                 onChange={(event) => handleBuscarCliente(event.target.value)}
                 placeholder="Consulta cliente"
                 />     
+                 <input 
+                className="nome"
+                type="date"
+                onChange={(event) => handleBuscarCliente(event.target.value)}
+                placeholder="pesquisa por data"
+                />  
            < Link className="btn-voltar"to='/'>Voltar</Link>  
 
       </div>
@@ -62,7 +68,6 @@ export default function Consulta() {
                   )))
                : ( <p className="texto">Não há nenhum cliente na lista.</p>)
               }
-           
            </div>
     </div> 
     );

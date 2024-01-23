@@ -3,10 +3,11 @@ import './style.css'
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+
 export default function Formulario() {
   const [values, setValues]  = useState();
   
-console.log(values);
+//console.log(values);
   const handleChangeValues = value => {
     setValues((prevValue) => ({
       ...prevValue,
@@ -24,7 +25,10 @@ console.log(values);
       return alert("Digite data de nascimento")
     }else if(!values.compra){
       return alert("Digite compra realizada pelo cliente")
-    }else{
+    }else if(!values.data){
+      return alert("Digite a data de compra do cliente")
+    }
+    else{
       axios.post("http://localhost:3001/cadastro",{
         nome: values.nome,
         data: values.data,
@@ -54,9 +58,8 @@ console.log(values);
                 <input 
                 className="dividido"
                 name="data" 
-                //value = {new Date()}
                 type="date"
-                placeholder="Data da compra"
+                //placeholder="Data da compra"
                 onChange={handleChangeValues}
                 />         
 
