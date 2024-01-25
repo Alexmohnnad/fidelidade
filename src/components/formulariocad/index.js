@@ -77,7 +77,7 @@ export default function Formulario() {
                 <input 
                 className="dividido"
                 name="datanascimento"
-                type="date"
+                type="text"
                 maxLength={5}
                 placeholder="Data de nascimento"
                 onChange={handleChangeValues}

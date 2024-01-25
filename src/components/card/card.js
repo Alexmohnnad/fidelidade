@@ -25,9 +25,9 @@ export default function Card (props){
         />
         <div className="card--container" onClick={() => handleClickCard()}>
             <h1 className="card--title">{props.nome}</h1>
-            <h2 className="card--title">{props.telefone}</h2>
+             {/*<h2 className="card--title">{props.telefone}</h2>*/}
             <h2 className="card--title">{props.compra}</h2>
-            <h3 className="card--title">{props.data}</h3>
+            {/*<h3 className="card--title">{props.data}</h3>*/}
         </div>
         </>
         

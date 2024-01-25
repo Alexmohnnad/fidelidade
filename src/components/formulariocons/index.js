@@ -50,11 +50,12 @@ export default function Consulta() {
                 onChange={(event) => handleBuscarCliente(event.target.value)}
                // placeholder="pesquisa por data"
                 />  
-                <button className="btn-gravar" onClick={() => window.location.reload()} >Limpar</button>
+                
                 < Link className="btn-voltar"to='/'>Voltar</Link>  
+                <button className="btn-gravar" onClick={() => window.location.reload()} >Limpar</button>
             <hr />
-      </div>
-            <div>
+            <div >
+              <div>
              {textoBusca && textoBusca.length > 0 
                 ? (textoBusca.map((textoBusca) => (
                     <Card 
@@ -71,7 +72,10 @@ export default function Consulta() {
                   )))
                : ( <p className="texto">Não há nenhum cliente na lista.</p>)
               }
+              </div>
            </div>
+      </div>
+            
     </div> 
     );
   }

@@ -42,28 +42,27 @@ export default function Consulta() {
                 onChange={(event) => handleBuscarCliente(event.target.value)}
                 placeholder="Consulta data de aniversario ex: 01/01"
                 />   
-                <button className="btn-gravar" onClick={() => window.location.reload()} >Limpar</button >
+                
                 < Link className="btn-voltar"to='/'>Voltar</Link>  
-
+                <button className="btn-gravar" onClick={() => window.location.reload()} >Limpar</button >
+                <div>
+                  {textoBusca && textoBusca.length > 0 
+                      ? (textoBusca.map((textoBusca) => (
+                          <Card 
+                          key={textoBusca.id}
+                          id={textoBusca.id}
+                          nome={textoBusca.nome}
+                          cpf={textoBusca.cpf}
+                          telefone={textoBusca.telefone}
+                          compra={textoBusca.compra} 
+                          listcard={textoBusca.ListCard}
+                          setListcard={textoBusca.setListcard}
+                          />
+                        )))
+                    : ( <p className="texto">Não há nenhum cliente na lista.</p>)
+                    }
+                </div>
       </div>
-            <div>
-             {textoBusca && textoBusca.length > 0 
-                ? (textoBusca.map((textoBusca) => (
-                    <Card 
-                    key={textoBusca.id}
-                    id={textoBusca.id}
-                    nome={textoBusca.nome}
-                    cpf={textoBusca.cpf}
-                    telefone={textoBusca.telefone}
-                    compra={textoBusca.compra} 
-                    listcard={textoBusca.ListCard}
-                    setListcard={textoBusca.setListcard}
-                    />
-                  )))
-               : ( <p className="texto">Não há nenhum cliente na lista.</p>)
-              }
-           
-           </div>
-    </div> 
+ </div> 
     );
   }
