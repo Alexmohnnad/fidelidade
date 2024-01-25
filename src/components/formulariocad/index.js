@@ -46,6 +46,7 @@ export default function Formulario() {
     <div className=".box-formulario">   
       <div className="formulario">
             <hr /> 
+
                 <input 
                 className="nome"
                 name="nome" 
@@ -64,7 +65,7 @@ export default function Formulario() {
                 />         
 
                 <input
-                 className="dividido"
+                className="dividido"
                  name="telefone"
                  type="number"
                  minLength={11}
@@ -76,7 +77,7 @@ export default function Formulario() {
                 <input 
                 className="dividido"
                 name="datanascimento"
-                type="datatime"
+                type="date"
                 maxLength={5}
                 placeholder="Data de nascimento"
                 onChange={handleChangeValues}

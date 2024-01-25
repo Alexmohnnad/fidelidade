@@ -36,20 +36,23 @@ export default function Consulta() {
     <div className=".box-formulario ">   
       <div className="formulario">
             <hr /> 
-                <input 
+                <label>Consulte por nome, telefone ou tipo de compra:</label> 
+                <input   
                 className="nome"
                 type="text"
                 onChange={(event) => handleBuscarCliente(event.target.value)}
                 placeholder="Consulta cliente"
-                />     
+                />  
+                 <label>Consulte por data da compra:</label>
                  <input 
                 className="nome"
                 type="date"
                 onChange={(event) => handleBuscarCliente(event.target.value)}
-                placeholder="pesquisa por data"
+               // placeholder="pesquisa por data"
                 />  
-           < Link className="btn-voltar"to='/'>Voltar</Link>  
-
+                <button className="btn-gravar" onClick={() => window.location.reload()} >Limpar</button>
+                < Link className="btn-voltar"to='/'>Voltar</Link>  
+            <hr />
       </div>
             <div>
              {textoBusca && textoBusca.length > 0 

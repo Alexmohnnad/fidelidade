@@ -41,8 +41,9 @@ export default function Consulta() {
                 type="text"
                 onChange={(event) => handleBuscarCliente(event.target.value)}
                 placeholder="Consulta data de aniversario ex: 01/01"
-                />     
-           < Link className="btn-voltar"to='/'>Voltar</Link>  
+                />   
+                <button className="btn-gravar" onClick={() => window.location.reload()} >Limpar</button >
+                < Link className="btn-voltar"to='/'>Voltar</Link>  
 
       </div>
             <div>

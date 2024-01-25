@@ -12,14 +12,13 @@ export default function Card (props){
         <FormDialog 
         open={open} 
         setOpen={setOpen}
-
         id={props.id} 
         nome={props.nome} 
         //cpf={props.cpf}
         telefone={props.telefone} 
        // datanascimento={props.datanascimento}
         compra={props.compra}
-        data={props.data} 
+        data={props.data}
         listcard={props.ListCard}
         setListcard={props.setListcard}
         

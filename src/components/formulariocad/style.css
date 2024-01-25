@@ -7,7 +7,8 @@
     background-color: #bad5be;
     padding:60px 0;
 }
-.formulario {  
+.formulario { 
+    flex-direction: column; 
     width: 50%;
     margin: 0 25%;
     padding: 10px 20px;
@@ -20,6 +21,7 @@
    width: 100%; 
    display: block;
    padding: 7px 0;
+   border-radius: 10px;
    margin: 10px auto;
    text-align:center; 
    font-size:15px;  
@@ -29,13 +31,14 @@
     width: 200px;
     margin: 10px;
     padding: 7px 0;
+    border-radius: 10px;
     text-align:center; 
     font-size:15px; 
     text-transform:uppercase;       
   }
 
 .div-btn{
-    width: 50%;
+    width: 100%;
     margin: 0 25%;
     padding: 10px 20px;
     text-align: center;  
